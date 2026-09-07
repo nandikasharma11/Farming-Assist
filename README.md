@@ -209,7 +209,4 @@ npm run build
 | `GET` | `/api/v1/market/prices` | Query APMC Mandi commodity rates and daily trends |
 | `GET` | `/api/v1/weather/forecast` | 7-day agricultural spray feasibility advisory |
 
----
 
-## 📄 License
-This project is licensed under the MIT License.
