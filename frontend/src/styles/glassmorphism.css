@@ -1,0 +1,204 @@
+/* Ultra-Premium Glassmorphic Surfaces & Animations */
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.03),
+    transparent
+  );
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.glass-panel:hover::before {
+  left: 100%;
+}
+
+.glass-panel-glow {
+  box-shadow: var(--shadow-md), var(--emerald-glow-sm);
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+.glass-panel:hover {
+  border-color: var(--glass-border-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg), 0 0 20px rgba(16, 185, 129, 0.15);
+}
+
+/* Glass Inputs */
+.glass-input {
+  width: 100%;
+  background: rgba(10, 16, 12, 0.6);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+.glass-input:focus {
+  border-color: var(--emerald-primary);
+  box-shadow: var(--emerald-glow-sm);
+  background: rgba(12, 20, 15, 0.8);
+}
+
+/* Glass Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #041209;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 2px 10px rgba(16, 185, 129, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #34d399, #10b981);
+  box-shadow: 0 4px 18px rgba(16, 185, 129, 0.5);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.92rem;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--emerald-primary);
+  color: #fff;
+}
+
+/* Status Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.badge-critical {
+  background: var(--crimson-dim);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #fca5a5;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.2);
+}
+
+.badge-warning {
+  background: var(--wheat-dim);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #fde68a;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.2);
+}
+
+.badge-success {
+  background: var(--emerald-dim);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #86efac;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+}
+
+.badge-info {
+  background: var(--azure-dim);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #bae6fd;
+}
+
+/* Keyframe Animations */
+@keyframes radar-sweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+@keyframes float-hud {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-radar {
+  animation: radar-sweep 4s linear infinite;
+  transform-origin: center;
+}
+
+.animate-pulse-glow {
+  animation: pulse-ring 2.5s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float-hud 3s ease-in-out infinite;
+}

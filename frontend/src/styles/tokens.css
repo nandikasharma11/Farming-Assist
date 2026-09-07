@@ -1,0 +1,58 @@
+:root {
+  /* Obsidian-Forest Color Palette */
+  --bg-canvas: #060a08;
+  --bg-gradient: radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.08), transparent 45%),
+                 radial-gradient(circle at 85% 85%, rgba(245, 158, 11, 0.05), transparent 50%),
+                 #060a08;
+  
+  /* Glass Surfaces */
+  --glass-bg: rgba(14, 22, 17, 0.72);
+  --glass-bg-hover: rgba(20, 32, 25, 0.85);
+  --glass-bg-active: rgba(26, 42, 33, 0.95);
+  --glass-border: rgba(16, 185, 129, 0.18);
+  --glass-border-hover: rgba(16, 185, 129, 0.45);
+  --glass-blur: blur(18px);
+
+  /* Luminous Neon & Accent Colors */
+  --emerald-primary: #10b981;
+  --emerald-hover: #059669;
+  --emerald-dim: rgba(16, 185, 129, 0.14);
+  --emerald-glow: 0 0 24px rgba(16, 185, 129, 0.32);
+  --emerald-glow-sm: 0 0 12px rgba(16, 185, 129, 0.25);
+
+  --wheat-gold: #f59e0b;
+  --wheat-dim: rgba(245, 158, 11, 0.14);
+  --wheat-glow: 0 0 20px rgba(245, 158, 11, 0.3);
+
+  --crimson-danger: #ef4444;
+  --crimson-dim: rgba(239, 68, 68, 0.15);
+  --crimson-glow: 0 0 20px rgba(239, 68, 68, 0.35);
+
+  --azure-info: #38bdf8;
+  --azure-dim: rgba(56, 189, 248, 0.15);
+
+  /* Typography */
+  --font-sans: 'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+
+  /* Text Colors */
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #64748b;
+  --text-disabled: #475569;
+
+  /* Elevations & Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 12px 35px rgba(0, 0, 0, 0.75);
+
+  /* Radius & Transitions */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
