@@ -19,3 +19,6 @@ class Crop(TimestampedBase):
 
     # Relationships
     plot: Mapped["FarmPlot"] = relationship("FarmPlot", back_populates="crops")
+    transactions: Mapped[List["KhataTransaction"]] = relationship(
+        "KhataTransaction", back_populates="crop", cascade="all, delete-orphan", lazy="selectin"
+    )

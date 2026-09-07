@@ -2,12 +2,14 @@ import pytest
 import pytest_asyncio
 from httpx import ASGITransport, AsyncClient
 from app.main import app
-from app.core.database import init_db
+from app.core.database import Base, async_engine, init_db
 
 @pytest_asyncio.fixture(autouse=True)
 async def setup_database():
-    """Ensure all tables exist before running tests."""
-    await init_db()
+    """Ensure a clean, isolated database for each test."""
+    async with async_engine.begin() as conn:
+        await conn.run_sync(Base.metadata.drop_all)
+        await conn.run_sync(Base.metadata.create_all)
 
 @pytest.mark.asyncio
 async def test_health_check():
@@ -45,13 +47,20 @@ async def test_farmer_signup_and_auto_plot():
 async def test_farmer_duplicate_signup():
     transport = ASGITransport(app=app)
     async with AsyncClient(transport=transport, base_url="http://test") as client:
-        payload = {
+        # Initial signup
+        await client.post("/api/v1/auth/signup", json={
+            "full_name": "Ramesh Kumar Patel",
+            "email": "ramesh.kumar@example.com",
+            "phone": "9876500001",
+            "password": "FarmerSecretPass123!",
+        })
+        # Duplicate signup with same email
+        res = await client.post("/api/v1/auth/signup", json={
             "full_name": "Ramesh Kumar Patel",
             "email": "ramesh.kumar@example.com",
             "phone": "9876500002",
             "password": "FarmerSecretPass123!",
-        }
-        res = await client.post("/api/v1/auth/signup", json=payload)
+        })
         assert res.status_code == 400
         assert "email address already exists" in res.json()["detail"]
 
@@ -59,6 +68,14 @@ async def test_farmer_duplicate_signup():
 async def test_farmer_login_success():
     transport = ASGITransport(app=app)
     async with AsyncClient(transport=transport, base_url="http://test") as client:
+        # Create user
+        await client.post("/api/v1/auth/signup", json={
+            "full_name": "Ramesh Kumar Patel",
+            "email": "ramesh.kumar@example.com",
+            "phone": "9876500001",
+            "password": "FarmerSecretPass123!",
+        })
+
         # Login with email
         login_res = await client.post("/api/v1/auth/login", json={
             "email_or_phone": "ramesh.kumar@example.com",
@@ -81,6 +98,12 @@ async def test_farmer_login_success():
 async def test_farmer_login_invalid_password():
     transport = ASGITransport(app=app)
     async with AsyncClient(transport=transport, base_url="http://test") as client:
+        await client.post("/api/v1/auth/signup", json={
+            "full_name": "Ramesh Kumar Patel",
+            "email": "ramesh.kumar@example.com",
+            "phone": "9876500001",
+            "password": "FarmerSecretPass123!",
+        })
         res = await client.post("/api/v1/auth/login", json={
             "email_or_phone": "ramesh.kumar@example.com",
             "password": "WrongPassword123!"
@@ -91,6 +114,12 @@ async def test_farmer_login_invalid_password():
 async def test_token_refresh_and_profile():
     transport = ASGITransport(app=app)
     async with AsyncClient(transport=transport, base_url="http://test") as client:
+        await client.post("/api/v1/auth/signup", json={
+            "full_name": "Ramesh Kumar Patel",
+            "email": "ramesh.kumar@example.com",
+            "phone": "9876500001",
+            "password": "FarmerSecretPass123!",
+        })
         # Login to get refresh token
         login_res = await client.post("/api/v1/auth/login", json={
             "email_or_phone": "ramesh.kumar@example.com",

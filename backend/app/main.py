@@ -34,6 +34,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+from app.routers import auth, crops, khata
+
 # Static file serving for drone captures
 os.makedirs(settings.UPLOAD_DIR, exist_ok=True)
 app.mount(
@@ -44,6 +46,8 @@ app.mount(
 
 # Mount Routers
 app.include_router(auth.router, prefix=settings.API_V1_STR)
+app.include_router(crops.router, prefix=settings.API_V1_STR)
+app.include_router(khata.router, prefix=settings.API_V1_STR)
 
 @app.get(f"{settings.API_V1_STR}/health", tags=["Health"])
 async def health_check():
