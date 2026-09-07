@@ -8,6 +8,7 @@ import {
   Sprout
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
+import { useLanguage } from '../../context/LanguageContext';
 
 export type NavigationTab = 'dashboard' | 'drone' | 'khata' | 'market';
 
@@ -18,12 +19,13 @@ interface SidebarProps {
 
 export const Sidebar: React.FC<SidebarProps> = ({ currentTab, onSelectTab }) => {
   const { user, logout } = useAuth();
+  const { t } = useLanguage();
 
   const navItems = [
-    { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { id: 'drone', label: 'Drone Studio', icon: Plane },
-    { id: 'khata', label: 'Farm Khata', icon: BookOpen },
-    { id: 'market', label: 'Mandi & Weather', icon: TrendingUp },
+    { id: 'dashboard', label: t('nav_dashboard', 'Dashboard'), icon: LayoutDashboard },
+    { id: 'drone', label: t('nav_drone', 'Drone Studio'), icon: Plane },
+    { id: 'khata', label: t('nav_khata', 'Farm Khata'), icon: BookOpen },
+    { id: 'market', label: t('nav_market', 'Mandi & Weather'), icon: TrendingUp },
   ] as const;
 
   return (
@@ -38,7 +40,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentTab, onSelectTab }) => 
             Krishi-Khata <span className="brand-badge">2.0</span>
           </div>
           <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-            Next-Gen Agritech OS
+            {t('brand_subtitle', 'Next-Gen Agritech OS')}
           </div>
         </div>
       </div>
@@ -55,7 +57,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentTab, onSelectTab }) => 
               className={`nav-item ${isActive ? 'active' : ''}`}
               style={{ background: 'none', border: 'none', width: '100%', textAlign: 'left' }}
             >
-              <Icon size={18} style={{ color: isActive ? 'var(--emerald-primary)' : 'var(--text-muted)' }} />
+              <Icon size={18} style={{ color: isActive ? 'var(--brand-primary)' : 'var(--text-muted)' }} />
               <span>{item.label}</span>
             </button>
           );
@@ -64,7 +66,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentTab, onSelectTab }) => 
 
       {/* User Info & Logout */}
       {user && (
-        <div style={{ marginTop: 'auto', paddingTop: '16px', borderTop: '1px solid rgba(255, 255, 255, 0.06)' }}>
+        <div style={{ marginTop: 'auto', paddingTop: '16px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <div className="user-avatar">
@@ -81,7 +83,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentTab, onSelectTab }) => 
             </div>
             <button
               onClick={logout}
-              title="Logout"
+              title={t('logout', 'Logout')}
               style={{
                 background: 'rgba(239, 68, 68, 0.1)',
                 border: '1px solid rgba(239, 68, 68, 0.2)',
@@ -102,3 +104,4 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentTab, onSelectTab }) => 
     </aside>
   );
 };
+

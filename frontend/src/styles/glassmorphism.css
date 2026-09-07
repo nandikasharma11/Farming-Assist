@@ -22,7 +22,7 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.04),
     transparent
   );
   transition: 0.5s;
@@ -34,21 +34,21 @@
 }
 
 .glass-panel-glow {
-  box-shadow: var(--shadow-md), var(--emerald-glow-sm);
-  border-color: rgba(16, 185, 129, 0.35);
+  box-shadow: var(--shadow-md), var(--brand-glow-sm);
+  border-color: rgba(88, 164, 167, 0.4);
 }
 
 .glass-panel:hover {
   border-color: var(--glass-border-hover);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-lg), 0 0 20px rgba(16, 185, 129, 0.15);
+  box-shadow: var(--shadow-lg), 0 0 20px rgba(2, 123, 127, 0.18);
 }
 
 /* Glass Inputs */
 .glass-input {
   width: 100%;
-  background: rgba(10, 16, 12, 0.6);
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  background: var(--input-bg);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-sm);
   padding: 10px 14px;
   color: var(--text-primary);
@@ -59,9 +59,8 @@
 }
 
 .glass-input:focus {
-  border-color: var(--emerald-primary);
-  box-shadow: var(--emerald-glow-sm);
-  background: rgba(12, 20, 15, 0.8);
+  border-color: var(--brand-primary);
+  box-shadow: var(--brand-glow-sm);
 }
 
 /* Glass Buttons */
@@ -70,8 +69,8 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: linear-gradient(135deg, #10b981, #059669);
-  color: #041209;
+  background: linear-gradient(135deg, var(--palette-3), var(--palette-4));
+  color: #f0fdfa;
   font-family: var(--font-sans);
   font-weight: 600;
   font-size: 0.92rem;
@@ -80,12 +79,12 @@
   border: none;
   cursor: pointer;
   transition: all var(--transition-fast);
-  box-shadow: 0 2px 10px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 2px 10px rgba(2, 123, 127, 0.3);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #34d399, #10b981);
-  box-shadow: 0 4px 18px rgba(16, 185, 129, 0.5);
+  background: linear-gradient(135deg, #028e94, var(--palette-3));
+  box-shadow: 0 4px 18px rgba(2, 123, 127, 0.5);
   transform: translateY(-1px);
 }
 
@@ -98,22 +97,21 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(88, 164, 167, 0.08);
   color: var(--text-primary);
   font-family: var(--font-sans);
   font-weight: 500;
   font-size: 0.92rem;
   padding: 10px 16px;
   border-radius: var(--radius-sm);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--glass-border);
   cursor: pointer;
   transition: all var(--transition-fast);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--emerald-primary);
-  color: #fff;
+  background: rgba(88, 164, 167, 0.16);
+  border-color: var(--brand-primary);
 }
 
 /* Status Badges */
@@ -144,10 +142,10 @@
 }
 
 .badge-success {
-  background: var(--emerald-dim);
-  border: 1px solid rgba(16, 185, 129, 0.4);
-  color: #86efac;
-  box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+  background: var(--brand-dim);
+  border: 1px solid rgba(2, 123, 127, 0.4);
+  color: var(--brand-primary);
+  box-shadow: 0 0 10px rgba(2, 123, 127, 0.2);
 }
 
 .badge-info {

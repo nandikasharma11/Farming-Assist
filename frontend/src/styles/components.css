@@ -31,8 +31,9 @@ body {
 /* Sidebar Styling */
 .sidebar {
   width: 260px;
-  background: rgba(10, 16, 12, 0.85);
-  backdrop-filter: blur(20px);
+  background: var(--sidebar-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   border-right: 1px solid var(--glass-border);
   display: flex;
   flex-direction: column;
@@ -41,6 +42,7 @@ body {
   top: 0;
   height: 100vh;
   z-index: 40;
+  transition: background var(--transition-normal);
 }
 
 .brand-header {
@@ -48,20 +50,20 @@ body {
   align-items: center;
   gap: 12px;
   padding-bottom: 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--glass-border);
   margin-bottom: 24px;
 }
 
 .brand-icon {
   width: 38px;
   height: 38px;
-  background: linear-gradient(135deg, #10b981, #059669);
+  background: linear-gradient(135deg, var(--palette-3), var(--palette-4));
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #041209;
-  box-shadow: var(--emerald-glow-sm);
+  color: #f0fdfa;
+  box-shadow: var(--brand-glow-sm);
 }
 
 .brand-title {
@@ -73,13 +75,13 @@ body {
 
 .brand-badge {
   font-size: 0.65rem;
-  background: var(--emerald-dim);
-  color: var(--emerald-primary);
+  background: var(--brand-dim);
+  color: var(--brand-primary);
   padding: 2px 6px;
   border-radius: var(--radius-full);
   font-weight: 700;
   margin-left: 4px;
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  border: 1px solid var(--glass-border);
 }
 
 /* Navigation & Active Route Indicator */
@@ -106,16 +108,16 @@ body {
 }
 
 .nav-item:hover {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(88, 164, 167, 0.1);
   color: var(--text-primary);
 }
 
 .nav-item.active {
-  background: rgba(16, 185, 129, 0.12);
-  color: var(--emerald-primary);
+  background: var(--brand-dim);
+  color: var(--brand-primary);
   font-weight: 600;
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  box-shadow: inset 0 0 12px rgba(16, 185, 129, 0.1);
+  border: 1px solid var(--glass-border-hover);
+  box-shadow: inset 0 0 12px rgba(2, 123, 127, 0.12);
 }
 
 .nav-item.active::after {
@@ -125,9 +127,9 @@ body {
   top: 25%;
   height: 50%;
   width: 3px;
-  background: var(--emerald-primary);
+  background: var(--brand-primary);
   border-radius: 0 4px 4px 0;
-  box-shadow: 0 0 8px var(--emerald-primary);
+  box-shadow: 0 0 8px var(--brand-primary);
 }
 
 /* Main Content Area */
@@ -141,8 +143,9 @@ body {
 /* Top Navbar */
 .top-navbar {
   height: 70px;
-  background: rgba(8, 14, 10, 0.7);
-  backdrop-filter: blur(16px);
+  background: var(--navbar-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   border-bottom: 1px solid var(--glass-border);
   display: flex;
   align-items: center;
@@ -151,6 +154,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 30;
+  transition: background var(--transition-normal);
 }
 
 .breadcrumbs {
@@ -162,8 +166,8 @@ body {
 }
 
 .breadcrumbs span.current {
-  color: var(--emerald-primary);
-  font-weight: 500;
+  color: var(--brand-primary);
+  font-weight: 600;
 }
 
 /* User profile button */
@@ -182,7 +186,7 @@ body {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #10b981, #0284c7);
+  background: linear-gradient(135deg, var(--palette-3), var(--palette-2));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -256,7 +260,7 @@ body {
 
 .glass-table th {
   padding: 14px 16px;
-  background: rgba(16, 185, 129, 0.06);
+  background: var(--brand-dim);
   color: var(--text-secondary);
   font-weight: 600;
   border-bottom: 1px solid var(--glass-border);
@@ -264,12 +268,12 @@ body {
 
 .glass-table td {
   padding: 14px 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid var(--glass-border);
   color: var(--text-primary);
 }
 
 .glass-table tr:hover td {
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--brand-dim);
 }
 
 /* Modal Backdrop */
@@ -289,12 +293,15 @@ body {
 }
 
 .modal-content {
-  background: rgba(14, 22, 17, 0.95);
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border-hover);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg), 0 0 35px rgba(16, 185, 129, 0.2);
+  box-shadow: var(--shadow-lg), var(--brand-glow);
   width: 100%;
   max-width: 580px;
   padding: 28px;
   position: relative;
+  color: var(--text-primary);
 }

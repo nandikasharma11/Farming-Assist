@@ -1,50 +1,20 @@
 :root {
-  /* Obsidian-Forest Color Palette */
-  --bg-canvas: #060a08;
-  --bg-gradient: radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.08), transparent 45%),
-                 radial-gradient(circle at 85% 85%, rgba(245, 158, 11, 0.05), transparent 50%),
-                 #060a08;
-  
-  /* Glass Surfaces */
-  --glass-bg: rgba(14, 22, 17, 0.72);
-  --glass-bg-hover: rgba(20, 32, 25, 0.85);
-  --glass-bg-active: rgba(26, 42, 33, 0.95);
-  --glass-border: rgba(16, 185, 129, 0.18);
-  --glass-border-hover: rgba(16, 185, 129, 0.45);
-  --glass-blur: blur(18px);
-
-  /* Luminous Neon & Accent Colors */
-  --emerald-primary: #10b981;
-  --emerald-hover: #059669;
-  --emerald-dim: rgba(16, 185, 129, 0.14);
-  --emerald-glow: 0 0 24px rgba(16, 185, 129, 0.32);
-  --emerald-glow-sm: 0 0 12px rgba(16, 185, 129, 0.25);
-
-  --wheat-gold: #f59e0b;
-  --wheat-dim: rgba(245, 158, 11, 0.14);
-  --wheat-glow: 0 0 20px rgba(245, 158, 11, 0.3);
-
-  --crimson-danger: #ef4444;
-  --crimson-dim: rgba(239, 68, 68, 0.15);
-  --crimson-glow: 0 0 20px rgba(239, 68, 68, 0.35);
-
-  --azure-info: #38bdf8;
-  --azure-dim: rgba(56, 189, 248, 0.15);
+  /* User-Provided Palette Swatches:
+     #95c1c0 (Lightest Seafoam)
+     #58a4a7 (Medium Sage Teal)
+     #027b7f (Vibrant Peacock Teal)
+     #015457 (Deep Ocean Teal)
+     #013337 (Obsidian Spruce Base)
+  */
+  --palette-1: #95c1c0;
+  --palette-2: #58a4a7;
+  --palette-3: #027b7f;
+  --palette-4: #015457;
+  --palette-5: #013337;
 
   /* Typography */
   --font-sans: 'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
-
-  /* Text Colors */
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --text-muted: #64748b;
-  --text-disabled: #475569;
-
-  /* Elevations & Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.6);
-  --shadow-lg: 0 12px 35px rgba(0, 0, 0, 0.75);
 
   /* Radius & Transitions */
   --radius-sm: 8px;
@@ -55,4 +25,93 @@
   --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Shared Semantic Accents */
+  --wheat-gold: #f59e0b;
+  --wheat-dim: rgba(245, 158, 11, 0.15);
+  --crimson-danger: #ef4444;
+  --crimson-dim: rgba(239, 68, 68, 0.15);
+  --azure-info: #38bdf8;
+  --azure-dim: rgba(56, 189, 248, 0.15);
+}
+
+/* ==========================================================================
+   DARK THEME (Default)
+   ========================================================================== */
+:root,
+[data-theme="dark"] {
+  --bg-canvas: #011417;
+  --bg-gradient: radial-gradient(circle at 12% 15%, rgba(2, 123, 127, 0.15), transparent 45%),
+                 radial-gradient(circle at 88% 85%, rgba(88, 164, 167, 0.1), transparent 50%),
+                 #011417;
+
+  /* Glass Surfaces */
+  --glass-bg: rgba(1, 35, 38, 0.75);
+  --glass-bg-hover: rgba(1, 51, 55, 0.85);
+  --glass-bg-active: rgba(1, 65, 70, 0.95);
+  --glass-border: rgba(88, 164, 167, 0.22);
+  --glass-border-hover: rgba(149, 193, 192, 0.45);
+  --glass-blur: blur(18px);
+
+  /* Primary Brand (Teal Spectrum) */
+  --brand-primary: #02969b;
+  --brand-hover: #027b7f;
+  --brand-dim: rgba(2, 123, 127, 0.18);
+  --brand-glow: 0 0 24px rgba(2, 150, 155, 0.35);
+  --brand-glow-sm: 0 0 12px rgba(2, 150, 155, 0.25);
+
+  /* Text Colors */
+  --text-primary: #f0fdfa;
+  --text-secondary: #95c1c0;
+  --text-muted: #58a4a7;
+  --text-disabled: #015457;
+
+  /* UI Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 12px 35px rgba(0, 0, 0, 0.7);
+
+  --sidebar-bg: rgba(1, 25, 28, 0.88);
+  --navbar-bg: rgba(1, 20, 23, 0.75);
+  --input-bg: rgba(1, 23, 26, 0.7);
+}
+
+/* ==========================================================================
+   LIGHT THEME
+   ========================================================================== */
+[data-theme="light"] {
+  --bg-canvas: #f0f7f7;
+  --bg-gradient: radial-gradient(circle at 10% 12%, rgba(149, 193, 192, 0.3), transparent 45%),
+                 radial-gradient(circle at 90% 88%, rgba(88, 164, 167, 0.2), transparent 50%),
+                 #f0f7f7;
+
+  /* Glass Surfaces */
+  --glass-bg: rgba(255, 255, 255, 0.82);
+  --glass-bg-hover: rgba(255, 255, 255, 0.95);
+  --glass-bg-active: rgba(240, 248, 248, 0.98);
+  --glass-border: rgba(88, 164, 167, 0.32);
+  --glass-border-hover: rgba(2, 123, 127, 0.5);
+  --glass-blur: blur(18px);
+
+  /* Primary Brand (Deep Rich Teal) */
+  --brand-primary: #027b7f;
+  --brand-hover: #015457;
+  --brand-dim: rgba(2, 123, 127, 0.12);
+  --brand-glow: 0 0 20px rgba(2, 123, 127, 0.25);
+  --brand-glow-sm: 0 0 10px rgba(2, 123, 127, 0.18);
+
+  /* Text Colors */
+  --text-primary: #012b2e;
+  --text-secondary: #015457;
+  --text-muted: #58a4a7;
+  --text-disabled: #95c1c0;
+
+  /* UI Shadows */
+  --shadow-sm: 0 2px 8px rgba(1, 51, 55, 0.06);
+  --shadow-md: 0 6px 20px rgba(1, 51, 55, 0.08);
+  --shadow-lg: 0 12px 35px rgba(1, 51, 55, 0.12);
+
+  --sidebar-bg: rgba(255, 255, 255, 0.88);
+  --navbar-bg: rgba(255, 255, 255, 0.82);
+  --input-bg: rgba(255, 255, 255, 0.9);
 }
