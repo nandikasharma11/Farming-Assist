@@ -17,6 +17,12 @@ env/
 venv/
 .venv/
 ENV/
+backend/venv/
+.pytest_cache/
+*.db
+*.sqlite*
+backend/uploads/drone_images/*
+!backend/uploads/drone_images/.gitkeep
 
 # Node / Web
 node_modules/
