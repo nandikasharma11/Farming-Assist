@@ -233,7 +233,7 @@ export const AuthPage: React.FC = () => {
             <Sprout size={32} />
           </div>
           <h1 style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--text-primary)', letterSpacing: '-0.02em' }}>
-            Krishi-Khata <span style={{ color: 'var(--brand-primary)' }}>2.0</span>
+            Farming Assist
           </h1>
           <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', marginTop: '6px' }}>
             {isLogin ? 'Sign in to access your farm ledger & drone diagnostic studio' : 'Create a new farmer operating account'}

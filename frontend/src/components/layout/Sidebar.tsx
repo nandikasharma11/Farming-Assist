@@ -37,7 +37,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentTab, onSelectTab }) => 
         </div>
         <div>
           <div className="brand-title">
-            Krishi-Khata <span className="brand-badge">2.0</span>
+            Farming Assist
           </div>
           <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
             {t('brand_subtitle', 'Next-Gen Agritech OS')}

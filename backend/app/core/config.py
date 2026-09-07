@@ -5,7 +5,7 @@ from pydantic import Field
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 class Settings(BaseSettings):
-    PROJECT_NAME: str = "Krishi-Khata 2.0"
+    PROJECT_NAME: str = "Farming Assist"
     API_V1_STR: str = "/api/v1"
     ENVIRONMENT: str = "development"
 

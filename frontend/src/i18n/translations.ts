@@ -18,9 +18,9 @@ export const SUPPORTED_LANGUAGES: LanguageOption[] = [
 export const translations: Record<SupportedLanguage, Record<string, string>> = {
   en: {
     // Brand
-    brand_name: 'Krishi-Khata 2.0',
+    brand_name: 'Farming Assist',
     brand_subtitle: 'Next-Gen Agritech OS',
-    initializing: 'Initializing Krishi-Khata 2.0 Operating System...',
+    initializing: 'Initializing Farming Assist Operating System...',
 
     // Nav
     nav_dashboard: 'Dashboard',
@@ -101,9 +101,9 @@ export const translations: Record<SupportedLanguage, Record<string, string>> = {
 
   hi: {
     // Brand
-    brand_name: 'कृषि-खाता 2.0',
+    brand_name: 'फार्मिंग असिस्ट',
     brand_subtitle: 'नेक्स्ट-जेन कृषि ऑपरेटिंग सिस्टम',
-    initializing: 'कृषि-खाता 2.0 ऑपरेटिंग सिस्टम लोड हो रहा है...',
+    initializing: 'फार्मिंग असिस्ट ऑपरेटिंग सिस्टम लोड हो रहा है...',
 
     // Nav
     nav_dashboard: 'डैशबोर्ड',
@@ -184,9 +184,9 @@ export const translations: Record<SupportedLanguage, Record<string, string>> = {
 
   mr: {
     // Brand
-    brand_name: 'कृषी-खाते 2.0',
+    brand_name: 'फार्मिंग असिस्ट',
     brand_subtitle: 'पुढील पिढीचे कृषी ऑपरेटिंग सिस्टीम',
-    initializing: 'कृषी-खाते 2.0 सिस्टीम सुरू होत आहे...',
+    initializing: 'फार्मिंग असिस्ट सिस्टीम सुरू होत आहे...',
 
     // Nav
     nav_dashboard: 'डॅशबोर्ड',
@@ -267,9 +267,9 @@ export const translations: Record<SupportedLanguage, Record<string, string>> = {
 
   te: {
     // Brand
-    brand_name: 'కృషి-ఖాతా 2.0',
+    brand_name: 'ఫార్మింగ్ అసిస్ట్',
     brand_subtitle: 'తదుపరి తరం వ్యవసాయ నిర్వహణ వ్యవస్థ',
-    initializing: 'కృషి-ఖాతా 2.0 ప్రారంభమవుతోంది...',
+    initializing: 'ఫార్మింగ్ అసిస్ట్ ప్రారంభమవుతోంది...',
 
     // Nav
     nav_dashboard: 'డాష్‌బోర్డ్',
@@ -350,9 +350,9 @@ export const translations: Record<SupportedLanguage, Record<string, string>> = {
 
   pa: {
     // Brand
-    brand_name: 'ਕ੍ਰਿਸ਼ੀ-ਖਾਤਾ 2.0',
+    brand_name: 'ਫਾਰਮਿੰਗ ਅਸਿਸਟ',
     brand_subtitle: 'ਅਗਲੀ ਪੀੜ੍ਹੀ ਦਾ ਖੇਤੀਬਾੜੀ ਸਿਸਟਮ',
-    initializing: 'ਕ੍ਰਿਸ਼ੀ-ਖਾਤਾ 2.0 ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ...',
+    initializing: 'ਫਾਰਮਿੰਗ ਅਸਿਸਟ ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ...',
 
     // Nav
     nav_dashboard: 'ਡੈਸ਼ਬੋਰਡ',
@@ -433,9 +433,9 @@ export const translations: Record<SupportedLanguage, Record<string, string>> = {
 
   gu: {
     // Brand
-    brand_name: 'કૃષિ-ખાતું 2.0',
+    brand_name: 'ફાર્મિંગ આસિસ્ટ',
     brand_subtitle: 'નેક્સ્ટ-જનરેશન એગ્રીટેક ઓપરેટિંગ સિસ્ટમ',
-    initializing: 'કૃષિ-ખાતું 2.0 શરૂ થઈ રહ્યું છે...',
+    initializing: 'ફાર્મિંગ આસિસ્ટ શરૂ થઈ રહ્યું છે...',
 
     // Nav
     nav_dashboard: 'ડેશબોર્ડ',

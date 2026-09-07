@@ -31,7 +31,7 @@ const AppContent: React.FC = () => {
         gap: '12px'
       }}>
         <div className="brand-icon animate-radar" style={{ width: '32px', height: '32px', borderRadius: '50%' }} />
-        <span>{t('initializing', 'Initializing Krishi-Khata 2.0 Operating System...')}</span>
+        <span>{t('initializing', 'Initializing Farming Assist Operating System...')}</span>
       </div>
     );
   }

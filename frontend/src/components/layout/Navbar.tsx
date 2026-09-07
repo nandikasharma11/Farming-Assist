@@ -63,7 +63,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, plotName = "North Co
     <header className="top-navbar">
       {/* Breadcrumbs */}
       <div className="breadcrumbs">
-        <span>Krishi-Khata</span>
+        <span>Farming Assist</span>
         <ChevronRight size={14} />
         <span className="current">{tabLabels[currentTab]}</span>
       </div>
